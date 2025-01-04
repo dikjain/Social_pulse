@@ -14,12 +14,13 @@ export const runFlow = async (message: string): Promise<string> => {
     };
 
     const headers = {
-        Authorization: `Bearer AstraCS:rcljgjjLklJcKXTLqJyqSdYl:81ae80ca3f28abfe7f208501360be49a08b7467a935115189c79ca84d6635381`,
+        Authorization: `Bearer ${APPLICATION_TOKEN}`,
         "Content-Type": "application/json",
     };
 
     try {
         const response = await axios.post(api_url, payload, { headers });
+        console.log(response);
         return response.data.outputs[0]?.outputs[0]?.results?.message?.text || "No response received";
     } catch (error) {
         if (axios.isAxiosError(error)) {
