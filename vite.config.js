@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://api.langflow.astra.datastax.com',
+        target: 'https://api.langflow.astra.datastax.com/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },

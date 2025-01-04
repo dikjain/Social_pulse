@@ -23,15 +23,6 @@ export const runFlow = async (message: string): Promise<string> => {
         return response.data.outputs[0]?.outputs[0]?.results?.message?.text || "No response received";
     } catch (error) {
         if (axios.isAxiosError(error)) {
-            const NewUrl = `https://api.langflow.astra.datastax.com/lf/${LANGFLOW_ID}/api/v1/run/${ENDPOINT}`
-            try{
-                await axios.post(NewUrl, payload, { headers });
-
-            }catch(error){
-
-                throw new Error(`HTTP error! status: ${error?.response?.status}`);
-            }
-
             throw new Error(`HTTP error! status: ${error?.response?.status}`);
         } else {
             throw new Error('An unexpected error occurred');
