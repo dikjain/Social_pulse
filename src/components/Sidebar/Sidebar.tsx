@@ -19,7 +19,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onDeleteSession,
 }) => {
   return (
-    <div className="w-80 h-screen flex flex-col p-4 glass-sidebar">
+    <div className="w-full md:w-80 h-screen flex flex-col p-4 glass-sidebar">
       <button
         onClick={onNewChat}
         className="flex items-center justify-center gap-2 w-full p-3 mb-4 rounded-xl glass-card hover:bg-blue-400/10 transition-all duration-200"

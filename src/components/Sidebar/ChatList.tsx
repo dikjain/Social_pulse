@@ -20,12 +20,12 @@ export const ChatList: React.FC<ChatListProps> = ({
       {sessions.map((session) => (
         <div
           key={session.id}
-          className={`flex items-center justify-between p-3 rounded-xl cursor-pointer transition-all duration-200 group hover:bg-blue-400/10 ${
+          className={`flex flex-col sm:flex-row items-center justify-between p-3 rounded-xl cursor-pointer transition-all duration-200 group hover:bg-blue-400/10 ${
             currentSessionId === session.id ? 'bg-blue-400/20' : 'bg-blue-900/10'
           }`}
           onClick={() => onSelectSession(session.id)}
         >
-          <div className="flex items-center space-x-3 truncate">
+          <div className="flex items-center space-x-3 truncate w-full sm:w-auto">
             <MessageSquare size={18} className="text-blue-400" />
             <span className="text-blue-100 truncate">{session.title}</span>
           </div>
@@ -34,7 +34,7 @@ export const ChatList: React.FC<ChatListProps> = ({
               e.stopPropagation();
               onDeleteSession(session.id);
             }}
-            className="opacity-0 group-hover:opacity-100 text-blue-400 hover:text-red-400 transition-opacity duration-200"
+            className="opacity-0 group-hover:opacity-100 text-blue-400 hover:text-red-400 transition-opacity duration-200 mt-2 sm:mt-0"
           >
             <Trash2 size={18} />
           </button>
