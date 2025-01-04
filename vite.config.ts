@@ -13,8 +13,6 @@ export default defineConfig({
         target: 'https://api.langflow.astra.datastax.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
-        secure: false,
-        ws: true,
       },
     },
   },

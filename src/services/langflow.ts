@@ -5,7 +5,7 @@ const ENDPOINT = "socialpulse_flow"; // add endpoint
 const APPLICATION_TOKEN = "AstraCS:rcljgjjLklJcKXTLqJyqSdYl:81ae80ca3f28abfe7f208501360be49a08b7467a935115189c79ca84d6635381"; // add your  application token
 
 export const runFlow = async (message: string): Promise<string> => {
-    const api_url = `/api/lf/${LANGFLOW_ID}/api/v1/run/${ENDPOINT}`;
+    const api_url = `https://api.langflow.astra.datastax.com/lf/${LANGFLOW_ID}/api/v1/run/${ENDPOINT}`;
 
     const payload = {
         input_value: message,
