@@ -24,6 +24,12 @@ export const runFlow = async (message: string): Promise<string> => {
         return response.data.outputs[0]?.outputs[0]?.results?.message?.text || "No response received";
     } catch (error) {
         if (axios.isAxiosError(error)) {
+            try{
+                await axios.post(URL, payload, { headers });
+            }catch{
+                console.log(error);
+
+            }
             throw new Error(`HTTP error! status: ${error?.response?.status}`);
         } else {
             throw new Error('An unexpected error occurred');
