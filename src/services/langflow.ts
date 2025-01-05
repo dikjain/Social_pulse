@@ -5,7 +5,7 @@ const BASE_URL ="https://api.langflow.astra.datastax.com"
 const APPLICATION_TOKEN = "AstraCS:rcljgjjLklJcKXTLqJyqSdYl:81ae80ca3f28abfe7f208501360be49a08b7467a935115189c79ca84d6635381"; // add your  application token
 
 export const runFlow = async (message: string): Promise<string> => {
-    const api_url = `https://cors-anywhere.herokuapp.com/https://api.langflow.astra.datastax.com/lf/f829f83f-e4c3-4742-89d5-9ddee4394fb0/api/v1/run/socialpulse_flow`;
+    const api_url = `https://cors-proxy.fringe.zone/https://api.langflow.astra.datastax.com/lf/f829f83f-e4c3-4742-89d5-9ddee4394fb0/api/v1/run/socialpulse_flow`;
 
     const payload = {
         input_value: message,
