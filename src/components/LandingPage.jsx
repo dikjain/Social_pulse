@@ -13,7 +13,6 @@ const LandingPage = ({ onGetStarted }) => {
   const graph3Ref = useRef(null);
 
   useEffect(() => {
-    // Animated background effect
     const container = containerRef.current;
     const particles = container.querySelectorAll('.particle');
     
@@ -31,7 +30,6 @@ const LandingPage = ({ onGetStarted }) => {
       });
     });
 
-    // Multiple animated graph effects
     if (graphRef.current) {
       gsap.to(graphRef.current, {
         y: -20,
@@ -70,7 +68,6 @@ const LandingPage = ({ onGetStarted }) => {
 
   return (
     <div ref={containerRef} className="h-screen overflow-hidden bg-gradient-to-br from-blue-950 via-purple-900 to-indigo-950 relative">
-      {/* Enhanced animated background particles */}
       {[...Array(60)].map((_, i) => (
         <div
           key={i}
@@ -92,7 +89,7 @@ const LandingPage = ({ onGetStarted }) => {
         />
       ))}
 
-      {/* Multiple floating graph decorations */}
+
       <div 
         ref={graphRef}
         className="absolute right-10 top-10 opacity-30"
@@ -132,7 +129,7 @@ const LandingPage = ({ onGetStarted }) => {
       </div>
 
       <div className="h-full flex flex-col md:flex-row items-center justify-between p-8 gap-8">
-        {/* Enhanced Hero Section */}
+ 
         <motion.div 
           className="flex-1 text-center"
           initial={{ opacity: 0, x: -50 }}
@@ -163,9 +160,25 @@ const LandingPage = ({ onGetStarted }) => {
               Start Chatting Now
             </motion.button>
           </div>
+
+          <motion.div
+            className="mt-12 w-full max-w-4xl mx-auto glass-card p-4 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(147,197,253,0.3)]"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <div className="relative pb-[56.25%] h-0">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded-xl"
+                src="https://www.youtube.com/embed/9mNaM9BjB7Y"
+                title="AI Technology Showcase"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </motion.div>
         </motion.div>
 
-        {/* Enhanced Features Grid */}
         <motion.div 
           className="flex-1 grid grid-cols-2 gap-6"
           initial={{ opacity: 0, x: 50 }}
