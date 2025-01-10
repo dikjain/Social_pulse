@@ -67,7 +67,7 @@ const LandingPage = ({ onGetStarted }) => {
   }, []);
 
   return (
-    <div ref={containerRef} className="h-screen overflow-hidden bg-gradient-to-br from-blue-950 via-purple-900 to-indigo-950 relative">
+    <div ref={containerRef} className="min-h-screen overflow-y-auto bg-gradient-to-br from-blue-950 via-purple-900 to-indigo-950 relative">
       {[...Array(60)].map((_, i) => (
         <div
           key={i}
@@ -128,7 +128,7 @@ const LandingPage = ({ onGetStarted }) => {
         <Cpu size={50} className="text-purple-400/50" style={{ filter: 'drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))' }} />
       </div>
 
-      <div className="h-full flex flex-col md:flex-row items-center justify-between p-8 gap-8">
+      <div className="min-h-screen flex flex-col md:flex-row items-center justify-between p-8 gap-8">
  
         <motion.div 
           className="flex-1 text-center"
