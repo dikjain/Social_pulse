@@ -6,6 +6,7 @@ import { ChatHeader } from './components/ChatHeader';
 import { useChat } from './hooks/useChat';
 import { Sparkles, ArrowLeft } from 'lucide-react';
 import './styles/glassmorphism.css';
+import LandingPage from './components/LandingPage.jsx';
 
 function App() {
   const {
@@ -22,6 +23,7 @@ function App() {
   } = useChat();
 
   const [showSidebar, setShowSidebar] = useState(true);
+  const [showLanding, setShowLanding] = useState(true);
 
   useEffect(() => {
     if (messageEndRef.current) {
@@ -35,6 +37,12 @@ function App() {
       setShowSidebar(false);
     }
   }, [currentSessionId]);
+
+  if (showLanding) {
+    return <LandingPage onGetStarted={() => {
+      setShowLanding(false);
+    }} />;
+  }
 
   return (
     <div className="flex flex-col md:flex-row h-screen w-full overflow-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950">
@@ -55,7 +63,6 @@ function App() {
           />
         </div>
       )}
-      
       <div className="hidden md:block">
         <Sidebar
           sessions={sessions}
